@@ -5,10 +5,10 @@ RUN apt update && \
 
 RUN npm install -g yarn serve
 
-RUN git clone https://github.com/sri-karthick-k/react-todo-client.git
-
 ARG CACHEBUST
 RUN echo $CACHEBUST
+
+RUN git clone https://github.com/sri-karthick-k/react-todo-client.git
 
 WORKDIR /react-todo-client
 
