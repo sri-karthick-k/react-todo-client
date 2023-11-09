@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import config from "../config";
 
 // Add data to psql
 
@@ -13,7 +14,7 @@ const InputTodo = () => {
     e.preventDefault();
     try {
       const body = { descript: description };
-      await fetch("http://localhost:4001/todos", {
+      await fetch(`${config.apiUrl}/todos`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),

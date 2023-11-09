@@ -1,4 +1,5 @@
 import React, { Fragment , useState, useEffect} from "react";
+import config from "../config";
 
 import EditTodo from "./EditTodo";
 const ListTodo = () => {
@@ -7,7 +8,7 @@ const ListTodo = () => {
 
     const getTodos = async() => {
         try {
-            const response = await fetch("http://localhost:4001/todos")
+            const response = await fetch(`${config.apiUrl}/todos`)
             const jsonData = await response.json()
 
             setTodos(jsonData)
@@ -19,7 +20,7 @@ const ListTodo = () => {
     const deleteTodo = async(id) =>{
         
         try {
-            await fetch(`http://localhost:4001/todo/${id}`, {
+            await fetch(`${config.apiUrl}/todo/${id}`, {
                 method:"DELETE"
             })
         } catch (err) {
