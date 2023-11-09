@@ -13,7 +13,7 @@ const InputTodo = () => {
     e.preventDefault();
     try {
       const body = { descript: description };
-      await fetch("http://localhost:4000/todos", {
+      await fetch("http://localhost:4001/todos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
