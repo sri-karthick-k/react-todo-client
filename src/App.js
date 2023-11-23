@@ -4,12 +4,12 @@ import './App.css';
 import InputTodo from './components/InputTodo';
 import ListTodo from './components/ListTodo';
 
-import config from './config';
+// import config from './config';
 
 function App() {
   const fetchData = async () => {
     try {
-      const response = await fetch(`${config.apiUrl}/test`);
+      const response = await fetch(`/test`);
       const data = await response.json();
       console.log(data);
     } catch (error) {

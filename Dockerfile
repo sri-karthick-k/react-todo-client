@@ -1,19 +1,21 @@
-FROM ubuntu:23.04
+FROM node:14.18.1
 
-RUN apt update && \
-    apt install -y nodejs npm git 
+# Set the working directory
+WORKDIR /app
 
-RUN npm install -g yarn serve
+# Install serve globally
+RUN npm install -g serve
 
 ARG CACHEBUST
 RUN echo $CACHEBUST
 
-RUN git clone https://github.com/sri-karthick-k/react-todo-client.git
+# Clone the repository and build the app
+RUN git clone https://github.com/sri-karthick-k/react-todo-client.git . && \
+    npm install && \
+    npm run build
 
-WORKDIR /react-todo-client
-
-RUN yarn install && yarn run build
-
+# Expose the port
 EXPOSE 3000
 
-CMD [ "serve", "-s", "build" ]
+# Run the app
+CMD ["serve", "-s", "build"]
