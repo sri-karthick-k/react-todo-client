@@ -1,5 +1,5 @@
 const config = {
-    apiUrl: "node-server-service:31001",
+    apiUrl: "192.168.0.105:31001",
   };
   
 export default config;  

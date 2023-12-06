@@ -8,7 +8,7 @@ const ListTodo = () => {
 
     const getTodos = async() => {
         try {
-            const response = await fetch(`${config.apiUrl}/api/todos`)
+            const response = await fetch(`${config.apiUrl}/api/todos`);
             const jsonData = await response.json()
 
             setTodos(jsonData)
