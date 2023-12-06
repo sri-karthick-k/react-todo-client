@@ -14,7 +14,7 @@ const InputTodo = () => {
     e.preventDefault();
     try {
       const body = { descript: description };
-      await fetch(`${config.apiUrl}/todos`, {
+      await fetch(`${config.apiUrl}/api/todos`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),

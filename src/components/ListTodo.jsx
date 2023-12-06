@@ -8,7 +8,7 @@ const ListTodo = () => {
 
     const getTodos = async() => {
         try {
-            const response = await fetch(`${config.apiUrl}/todos`)
+            const response = await fetch(`${config.apiUrl}/api/todos`)
             const jsonData = await response.json()
 
             setTodos(jsonData)
@@ -20,7 +20,7 @@ const ListTodo = () => {
     const deleteTodo = async(id) =>{
         
         try {
-            await fetch(`${config.apiUrl}/todo/${id}`, {
+            await fetch(`${config.apiUrl}/api/todo/${id}`, {
                 method:"DELETE"
             })
         } catch (err) {
